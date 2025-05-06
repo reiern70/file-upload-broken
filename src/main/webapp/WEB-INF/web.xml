@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+	<display-name>file-upload-broken</display-name>
+
+	<!--
+		There are three means to configure Wickets configuration mode and they 
+		are tested in the order given.
+		
+		1) A system property: -Dwicket.configuration 
+		2) servlet specific <init-param> 
+		3) context specific <context-param>
+
+		The value might be either "development" (reloading when templates change) or 
+		"deployment". If no configuration is found, "development" is the default. -->
+
+	<servlet>
+		<servlet-name>wicket.file-upload-broken</servlet-name>
+		<servlet-class>com.mycompany.CustomWicketServlet</servlet-class>
+		<init-param>
+			<param-name>applicationClassName</param-name>
+			<param-value>com.mycompany.WicketApplication</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>wicket.file-upload-broken</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+</web-app>
