@@ -108,6 +108,8 @@ public class TomcatMultipartServletWebRequestImpl extends MultipartServletWebReq
 		setMaxSize(maxSize);
 	}
 
+	// LOOK for references in wicket code to this. In particular AbstractFileUploadResource, look that before calling this method we are accessing a parameter uploadId... this is what triggers tomcat parsing multipart
+	// and the exhaustion of the Stream, thus we ge no "files" here.
 	@Override
 	public void parseFileParts() throws FileUploadException
 	{

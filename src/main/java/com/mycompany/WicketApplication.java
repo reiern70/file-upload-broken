@@ -58,7 +58,9 @@ public class WicketApplication extends WebApplication
 		getApplicationSettings().setUploadProgressUpdatesEnabled(true);
 	}
 
+
 	/*
+	Uncomment this to use tomcat machinery.
 	@Override
 	public WebRequest newWebRequest(HttpServletRequest servletRequest, String filterPath) {
 		return new ServletWebRequest(servletRequest, filterPath) {
